@@ -13,8 +13,12 @@ module.exports = {
         accent: "#7B00D3", 
         accentDark: "#ffdb4d",
         gray: "#747474",
-      }
+      },
+      fontFamily: {
+        in: ["var(--font-in)"],
+        mr: ["var(--font-mr)"]
     },
   },
+},
   plugins: [],
-}
+};
