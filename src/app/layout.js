@@ -1,7 +1,7 @@
 import { cx } from "../utils";
 import "./globals.css";
 import { Inter, Manrope } from "next/font/google";
-import Header from "./Header";
+import Header from "../components/Header";
 
 
 const inter = Inter({
