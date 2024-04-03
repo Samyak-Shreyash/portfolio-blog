@@ -1,4 +1,4 @@
-import profileImg from "@/public/profile-img.png";
+import profileImg from "@/public/samyak-logo.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,7 +12,7 @@ const Logo = () => {
           className="w-full h-auto rounter-full"
         />
       </div>
-      <span className="font-bold text-xl">Samyak Shreyash</span>
+      <span className="font-bold text-xl">SamDev</span>
     </Link>
   );
 };
