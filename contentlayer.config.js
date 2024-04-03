@@ -32,7 +32,7 @@ const Blog = defineDocumentType(() => ({
       type: "boolean",
       default: true,
     },
-    image: { type: "string", required: true },
+    image: { type: "image" },
   },
   computedFields: {
     url: {
