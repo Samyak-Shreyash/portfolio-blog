@@ -3,9 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image'
 import { format } from 'date-fns';
 
-const BlogLayoutThree = ({blog}) => {
+const BlogLayoutThree = ({blog, index}) => {
   return (
-    <div className='group flex flex-col items-center text-dark'>
+    <div key={index} className='group flex flex-col items-center text-dark'>
     <Link href={blog.url} className='h-full rounded-xl overflow-hidden'>
     <Image
       src={blog.image.filePath.replace("../public", "")}
