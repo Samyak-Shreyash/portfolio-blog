@@ -2,12 +2,11 @@ import { sortBlogs } from "@/src/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Tag from "../elements/Tag";
+import Tag from "../Elements/Tag";
 
 const HomeCoverSection = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
-  const coverBlog = sortedBlogs[2];
-  //   console.log(coverBlog);
+  const coverBlog = sortedBlogs[0];
   return (
     <div className="w-full inline-block">
       <article className="flex flex-col items-start justify-end mx-10 relative h-[85vh]">
@@ -30,18 +29,17 @@ const HomeCoverSection = ({ blogs }) => {
             name={coverBlog.tags[0]}
           />
           <Link href={coverBlog.url} className="mt-6">
-            <h1 className="font-bold capitalize text-light text-4xl">
-              <span
-                className="bg-gradient-to-r from-accent to-accent bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500"
-              >
+            <h1 className="font-bold capitalize text-4xl">
+              <span className="bg-gradient-to-r from-accent to-accent bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500">
                 {coverBlog.title}
               </span>
             </h1>
           </Link>
-          <p className="inline-block mt-4 text-xl font-in">{coverBlog.description}</p>
+          <p className="inline-block mt-4 text-xl font-in">
+            {coverBlog.description}
+          </p>
         </div>
       </article>
-      {coverBlog.tags[0]}
     </div>
   );
 };
