@@ -1,7 +1,7 @@
 import React from 'react'
-import AboutCoverSection from '../../components/About/AboutCoverSection';
+import AboutCoverSection from '@/src/components/About/AboutCoverSection';
 import Link from 'next/link';
-import Skills from '../../components/About/Skills';
+import Skills from '@/src/components/About/Skills';
 
 const Page = () => {
   return (
