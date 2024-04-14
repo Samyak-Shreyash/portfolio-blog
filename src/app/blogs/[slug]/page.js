@@ -10,7 +10,7 @@ export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
 }
 
-export async function generateMetaData({ params }) {
+export async function generateMetadata({ params }) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
 
   if (!blog) return;
@@ -47,9 +47,9 @@ export async function generateMetaData({ params }) {
       },
       twitter: {
         card: "summary_large_image",
-        title: siteMetaData.title,
-        creator: siteMetaData.author,
-        images: imageList, // Must be an absolute URL
+        title: blog.title,
+        description: blog.description,
+        images: ogImages, // Must be an absolute URL
       },
     },
   };

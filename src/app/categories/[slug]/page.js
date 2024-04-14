@@ -2,6 +2,7 @@ import { allBlogs } from "generatedContent";
 import GithubSlugger, { slug } from "github-slugger";
 import Categories from "../../../components/Blog/Categories";
 import BlogLayoutThree from "../../../components/Blog/BlogLayoutThree";
+import siteMetaData, { description } from "../../../utils/siteMetaData";
 
 const slugger = new GithubSlugger();
 export async function generateStaticParams() {
@@ -19,6 +20,15 @@ export async function generateStaticParams() {
   return paths;
 }
 
+export async function generateMetadata({ params }) {
+  if(params.slug==='all')
+  return {
+description:`Hear more about ${siteMetaData.interests} by subscribing to our newslettter` }
+  return {
+    title: params.slug.replaceAll("-", " ")+" Blogs",
+    description: `Hear more about ${params.slug} by subscribing to our newsletter`,
+  };
+}
 const CategoryPage = ({ params }) => {
   const allCategories = ["all"];
   const blogs = allBlogs.filter((blog) => {
