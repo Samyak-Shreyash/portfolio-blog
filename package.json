@@ -13,6 +13,7 @@
     "contentlayer": "^0.3.4",
     "date-fns": "^3.6.0",
     "github-slugger": "^2.0.0",
+    "install": "^0.13.0",
     "next": "14.1.4",
     "next-contentlayer": "^0.3.4",
     "next-sitemap": "^4.2.3",
@@ -27,6 +28,7 @@
     "shiki": "^1.2.4"
   },
   "devDependencies": {
+    "@supabase/supabase-js": "^2.42.3",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.12",
     "autoprefixer": "^10.0.1",

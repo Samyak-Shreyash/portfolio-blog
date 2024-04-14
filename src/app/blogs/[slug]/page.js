@@ -4,9 +4,55 @@ import Image from "next/image";
 import BlogDetails from "../../../components/Blog/BlogDetails";
 import RenderMdx from "../../../components/Blog/RenderMdx";
 import { slug } from "github-slugger";
+import siteMetaData, { socialBanner, title } from "../../../utils/siteMetaData";
 
 export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
+}
+
+export async function generateMetaData({ params }) {
+  const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
+
+  if (!blog) return;
+
+  let imageList = [siteMetaData.socialBanner];
+  if (blog.image) {
+    imageList =
+      typeof blog.image.filePath === "string"
+        ? [siteMetaData.siteUrl + blog.image.filePath.replace("../public", "")]
+        : blog.image;
+  }
+
+  const ogImages = imageList.map((img) => {
+    return { url: img.includes("http") ? img : siteMetaData.siteUrl + img };
+  });
+
+  return {
+    title: blog.title,
+    description: blog.description,
+    openGraph: {
+      title: blog.title,
+      description: blog.description,
+      url: siteMetaData.siteUrl + blog.url,
+      images: ogImages,
+      imageAlt: blog.title,
+      locale: "en_US",
+      keywords: blog.tags.join(", "),
+      type: "article",
+      publishedTime: new Date(blog.publishedAt).toISOString(),
+      modifiedTime: new Date(blog.updatedAt).toISOString(),
+      author: {
+        "@type": "Person",
+        name: siteMetaData.author,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: siteMetaData.title,
+        creator: siteMetaData.author,
+        images: imageList, // Must be an absolute URL
+      },
+    },
+  };
 }
 
 export default function BlogPage({ params }) {
@@ -35,7 +81,7 @@ export default function BlogPage({ params }) {
           className="aspect-square w-full h-full object-cover rounded-xl group-hover:scale-105 transition-all ease duration-300"
         />
       </div>
-      <BlogDetails blog={blog} slug={params.slug} />
+      <BlogDetails blog={blog} blogSlug={params.slug} />
       <div className="grid grid-cols-12 gap-16 mt-8 px-10">
         <div className="col-span-4">
           <details
