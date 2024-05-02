@@ -10,7 +10,7 @@ const HomeCoverSection = ({ blogs }) => {
   const coverBlog = sortedBlogs[0];
   return (
     <div className="w-full inline-block">
-      <article className="flex flex-col items-start justify-end mx-10 relative h-[85vh]">
+      <article className="flex flex-col items-start justify-end mx-5 sm:mx-10 relative h-[60vh] sm:h-[85vh]">
         <div
           className="absolute top-0 left-0 bottom-0 right-0 h-full bg-gradient-to-b from-transparent from-0%
         to-dark/90 rounded-3xl z-0"
@@ -23,20 +23,20 @@ const HomeCoverSection = ({ blogs }) => {
           fill
           className="w-full h-full object-center object-cover rounded-3xl"
         />
-        <div className="w-3/4 p-16 flex flex-col items-start justify-center z-0 text-light">
+        <div className="w-full lg:w-3/4 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col items-start justify-center z-0 text-light">
           <Tag
             className=""
             link={`/categories/${slug(coverBlog.tags[0])}`}
             name={coverBlog.tags[0]}
           />
           <Link href={coverBlog.url} className="mt-6">
-            <h1 className="font-bold capitalize text-4xl">
-              <span className="bg-gradient-to-r from-accent to-accent bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500">
+            <h1 className="font-bold capitalize text-lg sm:text-xl md:text-3xl lg:text-4xl">
+              <span className="bg-gradient-to-r from-accent to-accent dark:from-accentDark/70 dark:to-accentDark/70 bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500">
                 {coverBlog.title}
               </span>
             </h1>
           </Link>
-          <p className="inline-block mt-4 text-xl font-in">
+          <p className="hidden sm:inline-block mt-4 text-lg md:text-xl font-in">
             {coverBlog.description}
           </p>
         </div>

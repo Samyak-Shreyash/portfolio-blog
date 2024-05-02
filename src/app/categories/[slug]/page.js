@@ -42,15 +42,15 @@ const CategoryPage = ({ params }) => {
     });
   });
   return (
-    <article className="mt-12 flex flex-col text-dark">
-      <div className="px-32 flex flex-col ">
-        <h1 className="mt-6 font-semibold text-5xl">#{params.slug}</h1>
-        <span className="mt-2 inline-block">
+    <article className="mt-12 flex flex-col text-black dark:text-light">
+      <div className="px-16 md:px-32 flex flex-col ">
+        <h1 className="mt-6 font-semibold text-2xl sm:text-3xl md:text-5xl">#{params.slug}</h1>
+        <span className="mt-2 inline-block dark:text-gray">
           Discover more Categories and expand your knowledge !
         </span>
       </div>
       <Categories categories={allCategories} current={params.slug} />
-      <div className="grid grid-cols-3 grid-rows-3 gap-16 mt-24 px-32">
+      <div className="grid grid-cols-3 md:grid-cols-3 grid-rows-3 gap-16 mt-12 md:mt-24 px-16 md:px-32">
         {blogs.map((blog, index) => (
           <article key={index} className="col-span-1 row-span-1 relative">
             <BlogLayoutThree blog={blog} />{" "}

@@ -14,36 +14,36 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mt-12 text-xl font-medium leading-relaxed font-in"
+      className="mt-8 md:mt-12 text-lg md:text-xl font-medium leading-relaxed font-in dark:text-gray"
     >
-      Hello! My name is 
+      Hello! My name is &nbsp;
       <input
         type="text"
         placeholder="your name"
         {...register("name", { required: true, maxLength: 80 })}
-        className="outline-none border-0 p-0 mx-0 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray focus:border-gray bg-transparent"
+        className="outline-none border-0 p-0 mx-0 focus:ring-0 placeholder:text-center placeholder:text-lg dark:text-light dark:placeholder:text-gray border-b border-gray dark:border-light focus:border-black dark:focus:border-light bg-transparent"
       />
-      and I want to discuss as potential project. You can email me @ 
+      &nbsp;and I want to discuss as potential project. You can email me @ &nbsp; 
       <input
         type="text"
         placeholder="your@email"
         {...register("email", { required: true })}
-        className="outline-none border-0 p-0 mx-0 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray focus:border-gray bg-transparent"
+        className="outline-none border-0 p-0 mx-0 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray dark:border-light focus:border-black dark:focus:border-light bg-transparent dark:text-light dark:placeholder:text-gray"
       />
-      or reach out to me on 
+      &nbsp;or reach out to me on &nbsp;
       <input
         type="tel"
         placeholder="your contact number"
         {...register("phone number", { required: true })}
-        className="outline-none border-0 p-0 mx-0 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray focus:border-gray bg-transparent"
+        className="outline-none border-0 p-0 mx-0 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray dark:border-light focus:border-black dark:focus:border-light bg-transparent dark:text-light dark:placeholder:text-gray"
       />
-      Here are some details about my project: <br />
+      &nbsp;Here are some details about my project: <br /> <br />
       <textarea
         {...register("project details", {})}
         rows={3}
-        className="w-full outline-none border-0 p-0 mx-0 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray focus:border-gray bg-transparent"
+        className="w-full outline-none border-0 p-0 mx-0 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray dark:border-light focus:border-black dark:focus:border-light bg-transparent dark:text-light dark:placeholder:text-gray"
       />
-      <input type="submit" value="Send Request" clddassName="mt-8 font-medium inline-block capitalize text-xl py-3 px-8 border-2 border-solid border-dark rounded cursor-pointer"/>
+      <input type="submit" value="Send Request" className="mt-8 font-medium inline-block capitalize text-xl py-3 px-8 border-2 border-solid border-black dark:border-gray rounded cursor-pointer"/>
     </form>
   );
 }

@@ -10,12 +10,12 @@ const insights = [
     "Contributed as a Technical Course Reviewer 📝",
     "Recipient of the Hackernoon Noonies Award 🏆",
   ];
-  
-export default function AboutLayout({children}) {
-    return <main className="w-full flex flex-col items-center justify-between">
-        <div>
-            <InsightRoll insights={insights} />
-            {children}
-        </div>
+
+export default function AboutLayout({ children }) {
+  return (
+    <main className="w-full flex flex-col items-center justify-between">
+      <InsightRoll insights={insights} />
+      {children}
     </main>
-};
+  );
+}
