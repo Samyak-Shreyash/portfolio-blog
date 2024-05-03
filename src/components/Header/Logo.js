@@ -11,6 +11,7 @@ const Logo = () => {
           src={profileImg}
           alt="SamBlogs"
           className="w-full h-auto rounded-full"
+          sizes="33vw" priority
         />
       </div>
       <span className="hidden sm:inline font-bold dark:font-semibold text-lg md:text-xl ">

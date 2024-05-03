@@ -9,8 +9,9 @@ const AboutCoverSection = () => {
       <div className="w-full md:w-1/2 h-full border-b-2 md:border-r-2 border-solid border-dark dark:border-gray flex justify-center">
         <Image
           src={profileCharacter}
-          alt={siteMetaData.author}
+          alt={siteMetaData.author} priority
           className="w-4/5 xs:w-3/4 md:w-full h-full object-contain object-center"
+          sizes="(max-width: 768px) 100vw, (max-width: 1180px) 50vw, 33vw"
         />
       </div>
       <div className="w-full md:w-1/2 h-full flex flex-col text-left items-start justify-center px-5 xs:p-10 pb-10 lg:px-16  border-b-2 md:border-r-2 border-solid border-dark dark:border-gray ">
